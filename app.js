@@ -8,19 +8,26 @@ function sortear(){
         return;
       }
     
+    if (quantidade > (ate - de + 1)) {
+        alert('Campo "Quantidade" deve ser menor ou igual ao intervalo informado no campo "Do número" até o campo "Até o número". Verifique!');
+        return;
+      }
+    
 
     let sorteados = [];
     let numero;
 
-    for(let i = 0; i < quantidade; i++){
+    for (let i = 0; i < quantidade; i++) {
         numero = obterNumeroAleatorio(de, ate);
-
-        while(sorteados.includes(numero)) {
-            numero = obterNumeroAleatorio(de, ate);
+    
+        while (sorteados.includes(numero)) {
+          numero = obterNumeroAleatorio(de, ate);
+          alert('Tentando obter número inédito');
         }
-
+    
         sorteados.push(numero);
-    }
+      }
+    
 
     let resultado = document.querySelector('.numeros_sorteados');
 
