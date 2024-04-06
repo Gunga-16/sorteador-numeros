@@ -12,6 +12,10 @@ function sortear(){
     }
 
     alert(sorteados);
+
+    let numeros_sorteados = document.querySelector('.numeros_sorteados');
+
+    numeros_sorteados.textContent = sorteados;
 }
 
 function obterNumeroAleatorio(min, max){
