@@ -16,8 +16,6 @@ function sortear(){
         sorteados.push(numero);
     }
 
-    alert(sorteados);
-
     let numeros_sorteados = document.querySelector('.numeros_sorteados');
 
     numeros_sorteados.textContent = sorteados;
