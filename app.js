@@ -16,15 +16,32 @@ function sortear(){
         sorteados.push(numero);
     }
 
-    let numeros_sorteados = document.querySelector('.numeros_sorteados');
+    let resultado = document.querySelector('.numeros_sorteados');
 
-    numeros_sorteados.textContent = sorteados;
+    resultado.textContent = sorteados;
+
+    alterarStatusBotao();
 }
 
 function obterNumeroAleatorio(min, max){
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+
+function alterarStatusBotao(){
+    let botao = document.getElementById('btn-reiniciar');
+
+    if (botao.classList.contains('container__botao-desabilitado')) {
+        botao.classList.remove('container__botao-desabilitado');
+        botao.classList.add('container__botao');
+
+    } else {
+        botao.classList.remove('container__botao');
+        botao.classList.add('container__botao-desabilitado');
+    }
+}
+
+
 function reiniciar(){
-    sortear();
+    
 }
